@@ -50,7 +50,7 @@ function remindAllUsers(services) {
 function isNeedToRemind(service) {
   console.log("is need to remind")
   var isNeedToRemind = false
-  var moment = require('cloud/moment');
+  var moment = require('./cloud/moment');
   var now = moment()
   var dueDate = moment(service.get('dueDate'))
   if (service.get('isUsed')) {

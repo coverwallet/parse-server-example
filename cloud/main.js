@@ -1,17 +1,17 @@
-require('cloud/deleteUser.js');
-require('cloud/deleteInsurance.js');
-require('cloud/deleteCarrier.js');
-require('cloud/deleteContact.js');
-require('cloud/deleteQuote.js');
-require('cloud/deleteTutorial.js');
-require('cloud/deletePaymentPlan.js');
-require('cloud/deleteInsuranceType.js');
-require('cloud/reminderJob.js');
-require('cloud/beforeSaveTriggers.js');
-require('cloud/afterSaveOffer.js');
+require('./cloud/deleteUser.js');
+require('./cloud/deleteInsurance.js');
+require('./cloud/deleteCarrier.js');
+require('./cloud/deleteContact.js');
+require('./cloud/deleteQuote.js');
+require('./cloud/deleteTutorial.js');
+require('./cloud/deletePaymentPlan.js');
+require('./cloud/deleteInsuranceType.js');
+require('./cloud/reminderJob.js');
+require('./cloud/beforeSaveTriggers.js');
+require('./cloud/afterSaveOffer.js');
 
-var Constants = require('cloud/constants.js');
-var MailerService = require('cloud/mailerService.js');
+var Constants = require('./cloud/constants.js');
+var MailerService = require('./cloud/mailerService.js');
 
 Parse.Cloud.define("SendEmail", function(request, response) {
   Parse.Cloud.useMasterKey();
@@ -25,7 +25,7 @@ Parse.Cloud.define("SendEmail", function(request, response) {
     text: request.params.email_content
   }
 
-  if (request.params.bcc != null) {    
+  if (request.params.bcc != null) {
     console.log(request.params.bcc)
     params["bcc"] = request.params.bcc
   }

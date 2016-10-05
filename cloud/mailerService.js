@@ -1,7 +1,7 @@
 module.exports = {
     sendEmail: function(props, callback) {
 
-        var Constants = require('cloud/constants.js');
+        var Constants = require('./cloud/constants.js');
         if (Constants.environment === 'staging') {
             props.subject = '[STAGING] ' + props.subject;
         }
